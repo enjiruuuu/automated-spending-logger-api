@@ -11,6 +11,8 @@ A google service account key file is required for this to work. You can download
 4. add a new key.
 5. Rename downloaded file as ```keys.json``` and add it to your working directory
 
-To start the server, run ```npm start```. The default port is ```:8080```.
+To start the server, run ```npm start```. The default port is ```:80```.
+
+This is currently hosted on https://automated-spending-logger-api.glitch.me
 
 
