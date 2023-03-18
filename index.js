@@ -40,7 +40,7 @@ async function authSheets() {
         range: "Sheet1",
         valueInputOption: "USER_ENTERED",
         resource: {
-          values: req.body,
+          values: req.body.logs,
         },
     }
   
@@ -56,5 +56,3 @@ async function authSheets() {
   app.get("/", async (req, res) => {
     res.send('hello!')
   });
-
-  
