@@ -4,7 +4,6 @@ const { google } = require("googleapis");
 
 const app = express();
 const port = 8080;
-const id='14cXyuhFZoUnIRBczdtYJQ49IDS0I4sFDiWzsiApoWU4';
 
 //This allows us to parse the incoming request body as JSON
 app.use(express.json(), cors());
@@ -37,7 +36,7 @@ async function authSheets() {
     const { sheets } = await authSheets();
 
     const request = {
-        spreadsheetId: id,
+        spreadsheetId: req.body.sheetId,
         range: "Sheet1",
         valueInputOption: "USER_ENTERED",
         resource: {
@@ -52,6 +51,10 @@ async function authSheets() {
     } catch (err) {
         console.error(err);
     }
+  });
+
+  app.get("/", async (req, res) => {
+    res.send('hello!')
   });
 
   
